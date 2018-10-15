@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>jQuery</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<style>
+			body
+			{
+				background-color: yellow;
+			}
+			h3
+			{
+				color: red;
+			}
+			span
+			{
+				color: blue;
+			}
+			footer
+			{
+				color: purple;
+			}
+		</style>
+	</head>
+	<body>
+		<div class='cl1'>
+            <h3 id="head3_1">What is a Web Application?</h3>
+            <p>A Web application (Web app) is an application program that is stored on a remote server and delivered over the Internet through a browser interface.
+               <span>This is span 1.</span></p>
+            <p>Within the mobile computing sector, Web apps are sometimes contrasted with native apps, which are applications that are developed specifically for a particular platform or device and installed on that device.
+               <span>This is span 2.</span></p>
+            <p>However, the two are not mutually exclusive because many applications contain elements of both native and Web apps.
+               <span>This is span 3.</span></p>
+            <p>Programs that combine the two approaches are sometimes referred to as hybrid applications.
+               <span>This is span 4.</span></p>
+            <p>Single-page applications are more application-like because they reject the more typical web paradigm of moving between distinct pages with different URLs.</p>
+        </div>
+        <hr>
+        <div class='cl2'>
+            <h3 id="head3_2">Web app framework?</h3>
+            <p>A web framework (WF) or web application framework (WAF) is a software framework that is designed to support the development of web applications including web services, web resources, and web APIs.
+               <span>This is Span 5.</span></p>
+            <p>Web frameworks provide a standard way to build and deploy web applications. Web frameworks aim to automate the overhead associated with common activities performed in web development.
+               <span>This is span 6.</span></p>
+            <p>For example, many web frameworks provide libraries for database access, templating frameworks, and session management, and they often promote code reuse.
+               <span>This is span 7.</span></p>
+            <p>Frameworks typically set the control flow of a program and allow the user of the framework to "hook into" that flow by exposing various events.
+               <span>This is span 8.</span></p>
+            <p>This "inversion of control" design pattern is considered to be a defining principle of a framework, and benefits the code by enforcing a common flow for a team which everyone can customize in similar ways.</p>
+        </div>
+        <hr>
+        <div class='cl3'>
+            <h3 id="head3_3">Different Web app Frameworks</h3>
+            <p>Django is a full-stack open-source framework powered by Python and supports Python version up to 3.4. Full-stack means it provides all stuff needed “out of the box”. 
+               <span>This is span 9.</span></p>
+            <p>One more famous and reliable open-source MVC framework, created with Ruby. Before starting with RoR it would be advisable to familiarise yourself with Ruby. RoR was created to make coding of web-based applications simpler and faster.
+               <span>This is span 10.</span></p>
+            <p>Express.js is an open-source framework for Node.js to build classical web applications with server side and API. Roughly speaking it’s a standard server framework for projects that use javascript on the backend.
+               <span>This is span 11.</span></p>
+            <p>Angular is a javascript open-source framework designed specially for single-page web apps and mobile application development, using MVC architectural pattern. It is not a full-stack, but just a frontend framework dealing basically with your webpages.
+               <span>This is span 12.</span></p>
+            <p>React is one of them, created and supported by Facebook. Although React is actually not a full-stack framework, it provides only View-level (templating language) and some callback functions to render HTML code, it’s a powerful frontend tool.</p>
+        </div>
+
+	    <footer>
+            <hr>
+            <ul>
+	            <li id="head3count"></li>
+	            <li id="paracount"></li>
+	            <li id="spancount"></li>
+            </ul>
+        </footer>
+        <script>
+        	var no_h3 = $("h3").length; 
+			$("#head3count").text("The no. of h3's = " + no_h3);
+
+			var no_para_cl1 = $(".cl1").find('p').length;
+			var no_para_cl2 = $(".cl2").find('p').length; 
+			var no_para_cl3 = $(".cl1 + .cl2 + .cl3").find('p').length; 
+			$("#paracount").text("The total no. of paragraphs = " + (no_para_cl1 + no_para_cl1 + no_para_cl1));
+
+			var no_Span = $("p > span").length; 
+			$("#spancount").text("The total number of span's = " + no_Span);
+
+
+			var t1 = $(".cl2 p").first(); 
+			console.log( "first method: ", t1.text() );
+
+			var t2 = $(".cl1 + .cl2 + .cl3"); 
+			console.log( " select by adjancency: ", t2.text() );
+        </script>
+	</body>
+</html>

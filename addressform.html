@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Address Form</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<style>
+		body
+		{
+			background-color: skyblue;
+			color: white;
+		}
+		input[id="name"]
+		{
+			width: 98%;
+		}
+		input[id="address1"]
+		{
+			width: 95%;
+		}
+		input[id="address2"]
+		{
+			width: 95%;
+		}
+		div	  
+    	{ 
+    		display: table-row;
+    		margin-bottom: 10px;
+    	}
+		label 
+		{ 
+			display: table-cell;
+			margin-bottom: 10px;
+		}
+		input 
+		{ 
+			display: table-cell;
+			margin-bottom: 10px;
+			margin-right: 5px;
+		}
+	</style>
+</head>
+<body>
+	<h1>Address Form</h1>
+	<form class="pure-form pure-form-stacked">
+		<div>
+        <table>
+        	<tbody>
+        		<tr><td colspan="2">
+        			<label>Full Name</label>
+        			<input id="name" type="text" placeholder="Full Name"></td></tr>
+        		<tr><td>
+        			<label>Address 1</label>
+        			<input id="address1" type="text" placeholder="Address 1"></td>
+        		<td>
+        			<label>Address 2</label>
+        			<input id="address2" type="text" placeholder="Address 2"></td>
+    			<tr><td>
+        			<label>State</label>
+        			<select id="state">
+            			<option>AL</option>
+            			<option>CA</option>
+            			<option>IL</option>
+        			</select>
+        			<label style="display:none">Province</label>
+        			<input id="province" type="text" placeholder="Province" style="display:none">
+        			<label style="display:none">Locale</label>
+        			<input id="locale" type="text" placeholder="Locale" style="display:none">
+        			<label style="display:none">Region</label>
+        			<input id="region" type="text" placeholder="Region" style="display:none"></td>
+        		<td>
+        			<label>Country</label>
+        			<input id="country" type="text" placeholder="Country"></td></tr>
+        		<tr><td colspan="2">
+        			<label for="checkbox" class="pure-checkbox">
+            		<input id="checkbox" type="checkbox" onclick="address();"> International Address</label></td></tr>
+        		<tr><td colspan="2">
+        			<button type="button" class="pure-button pure-button-primary" id="sub">Submit</button></td>
+    			</tr>
+    		</tbody>
+    	</table>
+    </div>
+	</form>
+	<script>
+		function address() 
+		{
+			var checkbox = document.getElementById("checkbox");
+			var province = document.getElementById("province");
+			var locale = document.getElementById("locale");
+			var region = document.getElementById("region");
+			if(checkbox.checked==true)
+			{
+				province.style.display ="block";
+				locale.style.display ="block";
+				region.style.display ="block";
+			}
+			else
+			{
+				province.style.display ="none";
+				locale.style.display ="none";
+				region.style.display ="none";
+			}
+		}
+	</script>
+</body>
+</html>

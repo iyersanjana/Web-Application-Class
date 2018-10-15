@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Age Gate</title>
+    <link href="https://fonts.googleapis.com/css?family=K2D" rel="stylesheet">
+    <style>
+        body
+        {
+            font-family: 'K2D', sans-serif;
+            text-align: center;
+            background: url("https://g0xcmxagqs-flywheel.netdna-ssl.com/wp-content/uploads/2015/08/stock-liquor-store-blurred.jpg");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-attachment: fixed;
+            background-size: 1300px 700px;
+            margin-left: 280px;
+            margin-top: 200px;
+        }
+        .agegate
+        {
+            background-color: black;
+            width: 700px;
+            color: white;
+        }
+        div
+        {
+            padding: 15px;
+        }
+        button
+        {
+            border-radius: 12px;
+            color: black;
+            background-color: white;
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="agegate">
+    <h1>Enter your Birthdate</h1>
+            <div class="birthday">
+                <input type="number" name="monChk" id="month" min="1" max="12" required placeholder="MM"/>
+                <input type="number" name="dayChk" id="day" min="1" max="31" required placeholder="DD"/>
+                <input type="number" name="yrChk" id="year" min="1900" max="2018" required placeholder="YYYY"/>
+            </div>
+            <div class="button">
+                <button class="btn btn-primary" onclick="ageCompare(month.value, day.value, year.value)">Submit</button>
+            </div>
+    </div>
+    <script>
+        function ageCompare(birth_mon,birth_day,birth_yr)
+        {
+        tdy_date = new Date();
+        tdy_yr = tdy_date.getFullYear();
+        tdy_mon = tdy_date.getMonth();
+        tdy_day = tdy_date.getDate();
+        age = tdy_yr - birth_yr;
+        if (tdy_mon < (birth_mon - 1))
+            {
+                age--;
+            }
+        if (((birth_mon - 1) == tdy_mon) && (tdy_day < birth_day))
+            {
+                age--;
+            }
+        {
+        if (age<21) 
+            {
+                window.location.href="https://www.disney.com/";
+            } 
+        else 
+            {
+                window.location.href="http://boomchugalug.com/";
+            }
+        }
+        }
+    </script>    
+</body>
+</html>
