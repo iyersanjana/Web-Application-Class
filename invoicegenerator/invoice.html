@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>The Invoice Generator</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="invoice.js"></script>
+	<style>
+		body
+		{
+			color:white;
+			margin-left: 250px;
+			margin-top: 100px;
+			background: url("https://d11wkw82a69pyn.cloudfront.net/siteassets/images/data-robotics-invoice-1440x950-canvas.jpg");
+			background-repeat: no-repeat;
+			background-position: center;
+			background-attachment: fixed;
+			background-size: 1300px 700px;
+		}
+		.inv
+		{
+            background-color: red;
+        }
+		div
+		{
+			margin-top:20px;
+			margin-bottom:20px;
+		}
+	</style>
+	</head>
+	<body>
+		<h1>Invoice Generator</h1>
+		<div>
+		<select id="country">
+			<option value="ind">India-20</option>
+			<option value="usa">USA-25</option>
+			<option value="china">China-10</option>
+			<option value="aus">Australia-30</option>
+		</select></div>
+		<div>
+		<input type="text" id="partno" placeholder="Part No">
+		<input type="text" id="partdesc" placeholder="Part Description">
+		<input type="text" id="quantity" placeholder=" Quantity">
+		<input type="text" id="priceperitem" placeholder="Price Per Item">
+		<input type="text" id="discount" placeholder="DISCOUNT">
+		</div>
+		<button class="inv" type="submit" value ="generate invoice" onclick="generateinvoice()">Generate Invoice</button>
+	</body>
+</html>
