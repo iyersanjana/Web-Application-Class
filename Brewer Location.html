@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <title>Brewer Location</title>
+        <style>
+            body
+            {
+                background: url("https://cdn.craftbeer.com/wp-content/uploads/Solera_Brewing.jpg");
+                background-repeat: no-repeat;
+                background-position: center;
+                background-attachment: fixed;
+                background-size: 1300px 700px;
+                color: white;
+                margin-left: 500px;
+                margin-top: 100px;
+            }
+            .result
+            {
+                margin-top: 20px;
+                font-size: 16px;
+            }
+            .btn
+            {
+                background-color: brown;
+                color: white;
+                font-size: 16px;
+            }
+        </style>
+    </head>
+    <body>
+        <div><h1>Location Finder</h1>
+            <input type="text" name="#" id="txtbox">
+            <input class="btn" type="button" id="find" value="Find">
+        </div>
+        <div class="result" id="results"></div>
+        <script>
+        $(document).ready(function()
+        {
+            $('#find').click(function()
+            {
+                var fetchval=$('#txtbox').val();
+
+                var API="http://beermapping.com/webservice/locquery/d381ae74918ea5c8da5849a82873b339/" + fetchval + "&s=json";
+
+                $.getJSON(API,function(x){
+                    var data = x;
+                    var name='';
+                    $.each(data,function(i,data)
+                    {
+                        name+=data.name;
+                        name+='<br>';
+                      console.log(name);
+                    });
+                    $('#results').append(name);
+                });
+            });
+        });
+        </script>
+    </body>
+</html>
