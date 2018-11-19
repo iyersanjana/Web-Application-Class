@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>The Diet Minder</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="diet.js"></script>
+        <style>
+            body
+            {
+                background: url("http://www.nshapefitness.vn/wp-content/uploads/2016/10/vegetable-set-4.jpg");
+                background-repeat: no-repeat;
+                background-position: center;
+                background-attachment: fixed;
+                background-size: 1300px 700px;
+                margin-left: 450px;
+			    margin-top: 100px;
+                color: green;
+            }
+            ul
+            {
+                color: aquamarine;
+            }
+            .button-add
+            {
+                background-color: aquamarine;
+            }
+            .button-remove
+            {
+                background-color: red;
+            }
+            .button-sum
+            {
+                background-color: blue;
+            }
+            .add, 
+            .remove, 
+            .sum
+            {
+                margin-top:20px;
+                margin-bottom:20px;
+            }
+            h1{
+                font-family: 'Lucida Sans';
+            }
+            ul{
+                font-size: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Diet Minder</h1>
+        <ul id="List"></ul>
+        <input type="date" id="mydate"><br>
+        <div class="add">
+        <input type="text" id="food"placeholder="Food Item">
+        <input type="text" id="cal" placeholder="Calories">
+        <button class="button-add" onclick="adder()">Add</button><br>
+        </div>
+        <div class="remove">
+        <input type="number" id="myval" placeholder="Which element to be deleted">
+        <button class="button-remove" onclick="removeit()">Remove</button>
+        </div>
+        <div class="sum">
+        <button class="button-sum" onclick="sumit()">Sum</button>
+        </div>
+    </body>
+</html>
